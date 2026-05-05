@@ -4,15 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-//@Entity
-//public class Student {
 
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private int id;
-//
-//    private String name;
-//    private String room;}
 @Entity
 @Getter
 @Setter
@@ -29,11 +21,7 @@ public class Student {
     @Column(nullable = false)
     private int room;
 
-    // Optional but good
-//    private String course;
-//    private String phone;
 
-    // getters & setters
 
     //REQUIRED
     public Student() {}
