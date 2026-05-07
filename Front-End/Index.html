@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel ="stylesheet" href ="Style.css">
+  <title>Hostel Management</title>
+</head>
+<body>
+
+<h2>Add Student</h2>
+<label for="name"></label>
+<input type="text" id="name" placeholder="Enter Name"><br><br>
+<label for="room"></label>
+<input type="text" id="room" placeholder="Enter Room"><br><br>
+<hr>
+<h2>Student List </h2>
+
+<!--<button onclick="addStudent()">Add Student</button> -->
+<ul id="studentList"></ul>
+<button onclick="getStudents()">Load Students</button>
+
+<input type="hidden" id="studentId">
+<!--<input type="text" id ="name" placeholder="Name">-->
+<!--<input type="text" id="room" placeholder="Room">-->
+<button onclick="saveOrUpdate()">Save</button>
+<button onclick="clearForm()">New Student</button>
+<script src="Script.js"></script>
+
+</body>
+</html>
