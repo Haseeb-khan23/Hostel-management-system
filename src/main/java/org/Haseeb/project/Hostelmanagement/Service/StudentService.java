@@ -22,4 +22,9 @@ public class StudentService {
     public void delete(Long id){
         studentRepository.deleteById(id);
     }
+
+    public List<Student> searchByName(String name){
+        return studentRepository.findByNameContainingIgnoreCase(name);
+    }
+
 }

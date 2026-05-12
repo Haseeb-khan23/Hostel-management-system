@@ -1,5 +1,6 @@
 package org.Haseeb.project.Hostelmanagement.controller;
 
+import jakarta.validation.Valid;
 import org.Haseeb.project.Hostelmanagement.Model.Student;
 import org.Haseeb.project.Hostelmanagement.Service.StudentService;
 import org.springframework.web.bind.annotation.*;
@@ -19,8 +20,12 @@ public class StudentController {
     public List<Student> getAllStudents() {
         return studentService.getAll();
     }
+    @GetMapping("/search")
+    public List<Student> searchStudent(@RequestParam String name){
+        return studentService.searchByName(name);
+    }
     @PostMapping
-    public Student addStudent(@RequestBody Student student) {
+    public Student addStudent(@Valid @RequestBody Student student) {
         return studentService.save(student);
     }
     @DeleteMapping("/{id}")
@@ -29,7 +34,7 @@ public class StudentController {
     }
 
     @PutMapping("/{id}")
-    public Student updateStudent(@PathVariable int id, @RequestBody Student student) {
+    public Student updateStudent(@PathVariable Long id, @Valid @RequestBody Student student) {
 
         System.out.println("UPDATE HIT");
         System.out.println("ID: " + id);
